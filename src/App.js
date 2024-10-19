@@ -8,9 +8,8 @@ import LandmarkFeed from "./LandmarkFeed";
 
 function App() {
   return (
-
     <>
-       {/* <LiveVideoAnalysis /> */}
+      {/* Live Video Analysis could be used here */}
       <Box
         display="flex"
         flexDirection="row" 
@@ -21,18 +20,16 @@ function App() {
         width="100%" 
       >
         <Box flex="1" maxWidth="50%">
-          {" "}
           {/* First Box for CameraFeed */}
-          <CameraFeed title="Live Feed"/>
-
+          <CameraFeed title="Live Feed" />
         </Box>
 
         <Box flex="1" maxWidth="50%">
-          {" "}
-          {/* Second Box for LiveChatBox */}
-          <LandmarkFeed title="Landmark Detection"/>
+          {/* Second Box for LandmarkFeed */}
+          <LandmarkFeed title="Landmark Detection" />
         </Box>
       </Box>
+
       <Box
         display="flex"
         flexDirection="row" 
@@ -43,13 +40,11 @@ function App() {
         width="100%" 
       >
         <Box flex="1" maxWidth="50%">
-          {" "}
-          {/* First Box for CameraFeed */}
+          {/* First Box for Sentiment */}
           <Sentiment title="Sentiment Analysis:" />
         </Box>
 
         <Box flex="1" maxWidth="50%">
-          {" "}
           {/* Second Box for LiveChatBox */}
           <LiveChatBox title="Welcome to the Live Chat!" />
         </Box>
