@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Box, Typography, Paper } from "@mui/material";
 import { height } from "@mui/system";
 
-const CameraFeed = ({ title = "Hello" }) => {
+const LandmarkFeed = ({ title = "Hello" }) => {
   return (
     <Paper
       elevation={3} // Adds a shadow for a more elevated look
@@ -30,14 +30,14 @@ const CameraFeed = ({ title = "Hello" }) => {
         }}
       >
         {/* This could be where the chat messages go */}
-        <img src="http://localhost:5000/video_feed_no_landmarks" alt="Camera Feed" />
+        <img src="http://localhost:5000/video_feed" alt="Camera Feed" />
       </Box>
     </Paper>
   );
 };
 
-CameraFeed.propTypes = {
+LandmarkFeed.propTypes = {
   title: PropTypes.string,
 };
 
-export default CameraFeed;
+export default LandmarkFeed;
