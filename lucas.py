@@ -8,7 +8,7 @@ from hume.expression_measurement.batch.types import InferenceBaseRequest
 
 async def main():
     # Initialize an authenticated client
-    client = AsyncHumeClient(api_key="8I63Z7n9vDCcq2GgpEqjABPO5LvoHONQc2NPQFRT60ZQpMvv")
+    client = AsyncHumeClient(api_key="")
 
     # Define the filepath(s) of the file(s) you would like to analyze
 
