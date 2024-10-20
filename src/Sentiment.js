@@ -1,8 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import PropTypes from "prop-types";
 import { Box, Typography, Paper } from "@mui/material";
 
 const Sentiment = ({ title = "Hello" }) => {
+  const [sentiment, setSentiment] = useState('Loading...'); // Default is 'Loading...'
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      fetch('http://localhost:5000/sentiment')
+        .then(response => response.json())
+        .then(data => {
+          setSentiment(data.sentiment); // Update with the sentiment from the API
+        })
+        .catch(error => console.error('Error fetching sentiment status:', error));
+    }, 1000); // Poll every 1 second
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <Paper
       elevation={3} // Adds a shadow for a more elevated look
@@ -29,9 +44,8 @@ const Sentiment = ({ title = "Hello" }) => {
           overflowY: "auto", // Scrollable content if necessary
         }}
       >
-        {/* This could be where the chat messages go */}
-        <Typography variant="body1" color="textSecondary">
-          Chat messages will appear here.
+        <Typography variant="h3" color="textSecondary">
+          {sentiment} {/* Display the sentiment fetched from the API */}
         </Typography>
       </Box>
     </Paper>

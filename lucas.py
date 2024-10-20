@@ -5,10 +5,18 @@ import asyncio
 from hume import AsyncHumeClient
 from hume.expression_measurement.batch import Face, Models
 from hume.expression_measurement.batch.types import InferenceBaseRequest
+from dotenv import load_dotenv
 
 async def main():
     # Initialize an authenticated client
-    client = AsyncHumeClient(api_key="")
+    # Load environment variables from .env file
+    load_dotenv()
+
+    # Get the Hume API key from the environment variables
+    api_key = os.getenv("HUME_API_KEY")
+
+    # Initialize an authenticated client
+    client = AsyncHumeClient(api_key=api_key)
 
     # Define the filepath(s) of the file(s) you would like to analyze
 
